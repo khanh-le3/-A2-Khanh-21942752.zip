@@ -143,7 +143,7 @@ http get http://localhost/api/contacts/1/phones
 ![](Screenshots/1.1DeleteContact.png)
 ### 1.2 Change Add contact button label to Add {contact.name}'s Phone in line 41 in NewPhone.js
 ### 1.3 Change text drop down list in line 33 in NewPhone.js
-![Screenshots/1.2,1.3.png]
+![](Screenshots/1.2,1.3.png)
 ### 1.4 Change label Name to phone type in line 14 in PhoneList.js
 ![](Screenshots/1.4PhoneType.png)
 
