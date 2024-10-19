@@ -4,8 +4,7 @@ IMPORTANT: Once you've cloned this to your forked repository, ensure that you co
 
 Please include your shared repository link here:
 
-Example:
-Choiru's shared repository: https://github.com/choiruzain-latrobe/Assignment2.git
+https://github.com/khanh-le3/A2-Khanh-21942752
 
 
 Make sure for **your case it is in Private**
