@@ -218,7 +218,7 @@ http get http://localhost/api/contacts/1/phones
 ### Delete Phone
 ![](Screenshots/3.4.7DeletePhone.png)
 ### Update Phone and show by ID
-![](Screenshots/3.4.8 UpdatePhone.png)
+![](Screenshots/3.4.8UpdatePhone.png)
 
 
 # Task 4
