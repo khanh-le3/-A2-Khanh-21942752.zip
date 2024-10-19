@@ -404,17 +404,17 @@ module.exports = app => {
 
 # 4.2
 ### Add Company
-![](4.2.1AddCompany.png)
+![](Screenshots/4.2.1AddCompany.png)
 ### Show Company
-![](4.2.2ShowCompany.png)
+![](Screenshots/4.2.2ShowCompany.png)
 ### Delete Company 
-![](4.2.3DeleteCopany.png)
+![](Screenshots/4.2.3DeleteCopany.png)
 ### Update Company and get by ID
-![](4.2.4UpdateCompany.png)
+![](Screenshots/4.2.4UpdateCompany.png)
 
 
 ### Companies table
-![](4CompanyTable.png)
+![](Screenshots/4CompanyTable.png)
 
 
 # Task 5
@@ -618,9 +618,14 @@ export default CompanyList;
 
 ### User Interface walk through
 ![](Screenshots/5.1Result.png)
+
 ![](Screenshots/5.2result.png)
+
 ![](Screenshots/5.3Result(edit).png)
+
 Updated company info after refresh
+
+
 ![](Screenshots/5.4Result(Refreshed).png)
 
 
