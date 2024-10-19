@@ -13,15 +13,15 @@ function Phone(props) {
         setPhones(newPhones);
     }
 
-	return (
+	return ( 
 		<tr>
-            <td>{ phone.name }</td>
-            <td>{ phone.PhoneType }</td>
+            <td>{ phone.phone_type }</td>
+            <td>{ phone.phone_number }</td>
             <td style={
                 {
                     width: '14px',
                 }
-            }><button className="button red" onClick={deletePhone}>Delete</button></td>
+            }><button className="button red" onClick={deletePhone}>Delete Phone</button></td>
         </tr>
 	);
 }

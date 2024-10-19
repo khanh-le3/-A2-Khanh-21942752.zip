@@ -1,53 +1,52 @@
 const db = require("../models");
-const Phones = db.phones;
+const Companies = db.companies;
 const Op = db.Sequelize.Op;
 
-// Create phone
+//create company
 exports.create = (req, res) => {
-    const phone = {
-        phone_type: req.body.phone_type, 
-        phone_number: req.body.phone_number,
+    const company = {
+        company_name: req.body.company_name,
+        company_address: req.body.company_address,
         contactId: parseInt(req.params.contactId)
     };
 
-    Phones.create(phone)
+    Companies.create(company)
+        .then(data => {
+            res.send(data);
+        })
+        .catch(err => {
+            res.status(500).send({
+                message: 
+                err.message || "Some error occurred"
+            });
+        });
+};
+
+// Retrieve all Companies
+exports.findAll = (req, res) => {
+    Companies.findAll({
+        where: {
+            contactId: parseInt(req.params.contactId)
+        }
+    })
         .then(data => {
             res.send(data);
         }) 
         .catch(err => {
             res.status(500).send({
-                message:
-                    err.message || "Some error occurred"
+                message: err.message || "Some error occurred" 
             });
         });
 };
 
-// Get all phones
-exports.findAll = (req, res) => {
-
-    Phones.findAll({
-        where: {
-            contactId: parseInt(req.params.contactId)
-        }
-    })  
-        .then(data => {
-            res.send(data);
-        })
-        .catch(err => {
-            res.status(500).send({
-                message: err.message || "Some error occurred"
-            });
-        });
-};
-
-// Get one phone by id
+// Find a single Company by ID
 exports.findOne = (req, res) => {
-    Phones.findOne({
+    Companies.findOne({
         where: {
             contactId: req.params.contactId,
-            id: req.params.phoneId
+            company_id: req.params.companyId 
         }
-    }) 
+    })
         .then(data => {
             res.send(data);
         })
@@ -58,52 +57,55 @@ exports.findOne = (req, res) => {
         });
 };
 
-// Update one phone by id
-exports.update = (req, res) => {
-    const id = req.params.phoneId;
 
-    Phones.update(req.body, {
-        where: { id: id, contactId: req.params.contactId }
+// Update a Company
+exports.update = (req, res) => {
+    Companies.update(req.body, {
+        where: { 
+            contactId: req.params.contactId,
+            company_id: req.params.companyId           
+        }
     })
         .then(num => {
             if (num == 1) {
                 res.send({
-                    message: "Phone was updated successfully."
+                    message: "Company was updated successfully."
                 });
             } else {
                 res.send({
-                    message: `Cannot update Phone`
+                    message: `Cannot update Company`
                 });
             }
         })
         .catch(err => {
             res.status(500).send({
-                message: "Error updating Phone with id=" + id
+                message: "Error updating Company with id=" 
             });
         });
 };
 
-// Delete one phone by id
+// Delete a Company
 exports.delete = (req, res) => {
-    const id = req.params.phoneId;
-
-    Phones.destroy({
-        where: { id: id, contactId: req.params.contactId }
+    Companies.destroy({
+        where: { 
+            contactId: req.params.contactId,
+            company_id: req.params.companyId 
+        }
     })
         .then(num => {
             if (num == 1) {
                 res.send({
-                    message: "Phone was deleted successfully!"
+                    message: "Company was deleted successfully!"
                 });
             } else {
                 res.send({
-                    message: `Cannot delete Phone`
+                    message: `Cannot delete Company`
                 });
             }
         })
         .catch(err => {
-            res.status(500).send({
-                message: "Could not delete Phone with id=" + id
+            res.status(500).send({ 
+                message: "Could not delete Company with id=" 
             });
         });
 };

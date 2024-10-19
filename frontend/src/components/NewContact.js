@@ -3,7 +3,8 @@ import { useState } from 'react';
 function NewContact(props) {
     const {contacts, setContacts} = props;
     const [name, setName] = useState('');
-
+    const [address, setAddress] = useState('');
+ 
     async function createContact(e) {
         e.preventDefault();
 
@@ -13,7 +14,8 @@ function NewContact(props) {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                name
+                name,
+                address
             })
         });
 
@@ -23,6 +25,7 @@ function NewContact(props) {
             setContacts([...contacts, data]);
         }
         setName('');
+        setAddress('');
     }
 
 	return (

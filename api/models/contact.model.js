@@ -10,7 +10,7 @@ module.exports = (sequelize, Sequelize) => {
         },
         address: { 
             type: Sequelize.STRING
-        }
+        },
     });
 
     return Contact;
